@@ -1,9 +1,12 @@
+# Initialize Homebrew on fresh Apple Silicon or Intel Macs.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
-
-# Added by Toolbox App
-export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
-
-
-
-# Added by Antigravity CLI installer
-export PATH="$HOME/.local/bin:$PATH"
+# JetBrains Toolbox is optional and specific to macOS.
+typeset -U path
+[[ ! -d "$HOME/Library/Application Support/JetBrains/Toolbox/scripts" ]] || \
+  path+=("$HOME/Library/Application Support/JetBrains/Toolbox/scripts")
+path=("$HOME/.local/bin" $path)
