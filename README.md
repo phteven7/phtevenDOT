@@ -91,3 +91,62 @@ The captured Zsh PATH entries use `$HOME` rather than a specific Mac username.
 The JetBrains Toolbox PATH entry is macOS-specific. Do not apply the macOS
 profile over Omarchy's shell config unless you intentionally want that shell
 setup too. No credentials or machine-generated caches belong in this repo.
+
+## Hyprland Amethyst configuration
+
+Personal Amethyst-style overrides for Omarchy’s Lua-based Hyprland configuration.
+Requires an Omarchy/Hyprland installation supporting the `hl` and `o` Lua APIs;
+these are not standalone `.conf` files for standard Hyprland installations.
+
+### Layout
+
+Uses the native master layout with a centered master occupying 55% of the width.
+New windows become slaves. The master centers with at least two slaves and
+falls back to the left with fewer slaves. Omarchy styling remains inherited.
+
+### Shortcuts
+
+On an Apple keyboard, Option is Alt and Command is Super.
+
+| Shortcut | Action |
+| --- | --- |
+| Alt + Shift + H/J/K/L | Focus left/down/up/right |
+| Alt + Shift + Return | Swap with master |
+| Alt + Ctrl + Shift + H | Shrink master by 5 percentage points |
+| Alt + Ctrl + Shift + L | Grow master by 5 percentage points |
+| Alt + Ctrl + Shift + Return | Reset master width to 55% |
+
+### Apply the customizations
+
+`config/hypr/bindings.lua` and `config/hypr/looknfeel.lua` are exact copies of
+the customized files. Back up your existing files before applying them.
+If you already have personal overrides, merge the blocks labeled
+`Project Amethyst` into your corresponding files instead of replacing them.
+The main Omarchy config must load both files after its defaults.
+
+Check existing bindings with `omarchy menu keybindings --print`. These shortcuts
+were unbound on the source machine; on another installation, unbind conflicting
+shortcuts with `hl.unbind(...)` before adding the new bindings.
+
+After applying, run:
+
+```sh
+hyprctl reload
+hyprctl configerrors
+```
+
+### Full machine snapshot
+
+`snapshot/hypr/` contains the complete source-machine Hyprland configuration,
+including monitor, input, autostart, night-light and portal settings.
+It is included for reference and backup, not as a portable installation preset.
+
+The snapshot depends on Omarchy defaults in `/usr/share/omarchy` (or
+`OMARCHY_PATH`). Its input config also loads
+`/usr/share/try-omarchy/pinch-input.lua` and
+`/usr/share/try-omarchy/apple-keyboard-input.lua`.
+Its QEMU monitor profile invokes `/usr/local/bin/omarchy-native-display-sync`
+when the kernel option `omarchy.qemu_virgl=1` is present.
+Those external helpers and the active Omarchy theme are not included.
+
+Exported from the source machine on 2026-10-12. No live configuration was changed.
