@@ -1,23 +1,62 @@
 # Integrating phtevenDOT
 
-This repository is the source for personal configs. When asked to integrate it
-on a machine, inspect the host and existing configs, install missing dependencies,
-and create symlinks from the normal application paths to this checkout. Resolve
-the checkout's actual absolute path; do not assume a username or clone location.
+This repository is the source for personal configs. Integration is a guided
+conversation: the user chooses what to install, then the agent handles the
+selected dependencies, backups, links, and verification. Resolve the checkout's
+actual absolute path; do not assume a username or clone location.
+
+## Start with scope: Full or Custom
+
+These instructions apply when asked to integrate/install configs on a machine,
+not when asked to edit, review, or document this repository.
+
+Before downloading dependencies, replacing configs, or creating links, inspect
+the host read-only and establish the user's selection. Follow the prompts and
+component boundaries in [the integration flow](docs/integration.md).
+
+- If the user has not selected a scope, ask: **"Full or Custom? Full integrates
+  every compatible config; Custom lets you pick the components."** Wait for an
+  answer. Do not assume Full, and do not treat a preselected UI option or silence
+  as a submitted choice.
+- For Custom, ask which components they want: **Hyprland/phteven bindings,
+  tmux, Neovim, Zsh + Powerlevel10k, macOS login paths, or Powerlevel10k only.**
+  Explain which are available on this host. Accept a free-text list if the UI
+  cannot offer multiple selections.
+- An explicit request such as **"tmux only"**, **"Neovim and Hyprland"**, or
+  **"Full"** already establishes scope. Retain selections from the conversation;
+  do not repeat the mode question or ask again for the same authorization.
+- Full means all compatible configs in this repo, with the complete Zsh setup
+  covering Powerlevel10k. It does not include an OS/Omarchy installation,
+  unrelated applications, or a change to the user's default login shell.
+- A selected component includes its necessary dependencies. Never install or
+  alter an unselected component because its files happen to be in this repo.
+  If the selection is empty, canceled, or only a request for a preview, make no
+  installation changes.
+
+For selected Neovim on a host with an Omarchy palette, ask whether it should use
+**Fixed** or **Follow Omarchy**, unless that preference was already given. On
+other hosts, explain that Fixed is the available default. Keep this preference
+in local Neovim state, not in shared config source.
+
+Summarize the selected components, exact destinations, missing dependencies,
+backup locations, and any incompatibilities. Then carry out the user's selected
+scope; do not add a second approval prompt for the same choice. If an unavailable
+component needs a different setup, explain it and ask only about that change.
+Continue independent work on the other selected components.
 
 ## Config paths
 
-On macOS and Linux:
+Link only the paths belonging to selected components. On macOS and Linux:
 
 - `tmux/tmux.conf` → `~/.tmux.conf`
 - `nvim/` → `~/.config/nvim`
 - `zsh/zshrc` → `~/.zshrc`
 - `zsh/p10k.zsh` → `~/.p10k.zsh`
 
-On macOS also link `zsh/zprofile` → `~/.zprofile`. It initializes an installed
+For selected macOS login paths, link `zsh/zprofile` → `~/.zprofile`. It initializes an installed
 Homebrew and adds optional JetBrains Toolbox and personal executable paths.
 
-For Lua-based Omarchy also link these individual files:
+For selected phteven bindings on Lua-based Omarchy, link these individual files:
 
 - `config/hypr/bindings.lua` → `~/.config/hypr/bindings.lua`
 - `config/hypr/looknfeel.lua` → `~/.config/hypr/looknfeel.lua`
@@ -30,14 +69,23 @@ existing keybindings for conflicts before adding the phteven bindings.
 
 ## Dependencies
 
-Use `dependencies.json` for the Oh My Zsh, Powerlevel10k, Zsh plugins, and tmux
-Catppuccin upstream URLs, expected paths, and known-working revisions. Keep
-existing working installations. Install missing dependencies outside the repo;
+Use `dependencies.json` for upstream URLs, expected paths, and known-working
+revisions. Scope dependencies to the selected components: tmux needs its
+Catppuccin theme; Zsh needs Oh My Zsh, its two custom plugins, and Powerlevel10k;
+Neovim manages its own plugins. A tmux-only install must not install Neovim or
+Zsh. Powerlevel10k-only integration uses the existing Zsh setup and merges its
+theme/prompt references; it must not replace the user's entire `.zshrc`.
+If that shell does not use Oh My Zsh, source the installed Powerlevel10k theme
+directly rather than adding Oh My Zsh solely for the prompt.
+
+Keep existing working installations. Install missing dependencies outside the repo;
 do not copy their source or generated caches into this checkout.
 
-The main tools are Git, Neovim, tmux, and Zsh. Neovim also uses ripgrep,
-fd, a C compiler, and gitui. The C# config needs a .NET SDK; Mason manages the
-Roslyn server and CSharpier. Use a Nerd Font for prompt and status icons.
+The corresponding tools are Git and the selected application's executable.
+Neovim also uses ripgrep, fd, a C compiler, and gitui. A .NET SDK is needed for
+its C# tools, not for basic editing; offer it when the user wants C# support.
+Mason manages the Roslyn server and CSharpier. Explain Nerd Font requirements
+for selected prompt/status features without changing terminal settings silently.
 Check the installed tool versions against the current LazyVim requirements.
 Neovim bootstraps lazy.nvim and installs plugins using `nvim/lazy-lock.json`.
 
@@ -73,10 +121,12 @@ already linked to this checkout; leave an existing installation working if a
 dependency is unavailable. Respect existing XDG/ZDOTDIR overrides when deciding
 which paths the applications actually load.
 
-Check Zsh syntax and startup, Neovim startup, and tmux config loading. Verify
-tmux in a separate server so existing sessions are unaffected. On Omarchy,
-reload Hyprland and check `hyprctl configerrors`. Verify that active paths resolve
-into this checkout, and report anything that could not be checked on the host.
+Verify only selected components: Zsh syntax/startup, Neovim startup, tmux config
+loading, or Hyprland reload and `hyprctl configerrors`, as applicable. Verify
+tmux in a separate server so existing sessions are unaffected. Check that
+selected active paths resolve into this checkout (or document the small merge
+used for prompt-only integration). Report installed, skipped, and blocked
+components separately, including backups and anything unverified on this host.
 
 After changing theme behavior, run `nvim --headless -i NONE -c 'luafile tests/theme.lua'`
 with this config active. It uses temporary fixtures and leaves saved user

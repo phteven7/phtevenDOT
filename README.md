@@ -46,15 +46,25 @@ git clone https://github.com/phteven7/phtevenDOT.git ~/phtevenDOT
 
 Then give your agent this request:
 
-> Integrate ~/phtevenDOT for this machine. Follow AGENTS.md, back up existing
-> configs, and link the active paths to this checkout. Keep my machine-specific
-> settings and verify that the applications load correctly.
+> Integrate ~/phtevenDOT for this machine. Follow AGENTS.md and ask me whether
+> I want Full or Custom before installing anything. Back up existing configs,
+> keep my machine-specific settings, and verify the components I choose.
+
+| Choose | What happens |
+| --- | --- |
+| **Full** | Integrate every config compatible with your machine. |
+| **Custom** | Pick Hyprland/phteven bindings, tmux, Neovim, Zsh + Powerlevel10k, macOS login paths, or just the prompt. |
+
+Only want a couple of pieces? Tell the agent **"tmux and Neovim only"** and it
+uses that scope directly. It installs dependencies only for your selection,
+and asks about Neovim's theme mode when applicable.
+[See the guided integration flow →](docs/integration.md)
 
 Edit here; the active configs point back here. Keep the checkout in place.
 Integration is guided by [`AGENTS.md`](AGENTS.md); this repo has no setup scripts.
 
-**macOS & Linux:** Git, Neovim, tmux, Zsh, and a Nerd Font. Neovim also uses
-ripgrep, fd, a C compiler, and gitui; C# tooling needs a .NET SDK. Upstream URLs,
+**Dependencies follow your choices.** Neovim uses ripgrep, fd, a C compiler,
+and gitui; C# tooling needs a .NET SDK. Prompt and status icons use a Nerd Font. Upstream URLs,
 expected paths, and known-working revisions live in [`dependencies.json`](dependencies.json).
 Neovim installs its plugins from [`lazy-lock.json`](nvim/lazy-lock.json).
 
