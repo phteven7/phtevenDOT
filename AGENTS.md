@@ -41,6 +41,14 @@ Roslyn server and CSharpier. Use a Nerd Font for prompt and status icons.
 Check the installed tool versions against the current LazyVim requirements.
 Neovim bootstraps lazy.nvim and installs plugins using `nvim/lazy-lock.json`.
 
+## Style
+
+Neovim defaults to literal tab characters, displayed at two columns (four for
+C#). Keep `.editorconfig` and `nvim/stylua.toml` consistent with that preference.
+Project formatter settings remain authoritative; CSharpier projects need
+`useTabs: true` if formatted C# should also use tabs. Do not silently rewrite
+another project's indentation rules. Format Lua with the repo's StyLua config.
+
 ## Integration and verification
 
 Back up any existing files or directories before replacing them with symlinks,

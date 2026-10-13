@@ -1,5 +1,5 @@
--- Match the conventional C# indentation style without changing other files.
-vim.opt_local.expandtab = true
+-- Real tabs, displayed at four columns for C#.
+vim.opt_local.expandtab = false
 vim.opt_local.shiftwidth = 4
-vim.opt_local.softtabstop = 4
+vim.opt_local.softtabstop = 0
 vim.opt_local.tabstop = 4
