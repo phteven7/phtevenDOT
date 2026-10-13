@@ -26,7 +26,7 @@ Keep machine-specific Hyprland monitor, input, autostart, and VM integrations
 in place. Check that the existing `hyprland.lua` loads `hypr.bindings` and
 `hypr.looknfeel` after Omarchy defaults. These overrides require the `hl` and `o`
 Lua APIs and cannot be installed as standard Hyprland `.conf` files. Inspect
-existing keybindings for conflicts before adding the Amethyst bindings.
+existing keybindings for conflicts before adding the phteven bindings.
 
 ## Dependencies
 
@@ -49,6 +49,21 @@ Project formatter settings remain authoritative; CSharpier projects need
 `useTabs: true` if formatted C# should also use tabs. Do not silently rewrite
 another project's indentation rules. Format Lua with the repo's StyLua config.
 
+## Theme modes and sharing
+
+Neovim's `config.theme` module owns fixed/Omarchy palette modes. The default is
+fixed Catppuccin Mocha. `:PhtevenTheme` opens the picker and `<leader>uO` toggles.
+Choices are saved under Neovim's state directory, outside the shared checkout.
+Do not replace the mode controller with a symlink to Omarchy's generated
+`neovim.lua` plugin spec. Auto mode reads flat `colors.toml` data from current
+Omarchy state/config paths and maps it to Catppuccin; it does not execute the
+system theme's Lua or download extra theme plugins.
+
+Use **phteven bindings** for this collection, with Amethyst credited as its
+inspiration. Swap is the featured workflow. Keep README, visual cards, and the
+field guide aligned with the actual keybindings. Edit SVG artwork as source;
+keep generated preview PNGs outside the repository.
+
 ## Integration and verification
 
 Back up any existing files or directories before replacing them with symlinks,
@@ -62,6 +77,10 @@ Check Zsh syntax and startup, Neovim startup, and tmux config loading. Verify
 tmux in a separate server so existing sessions are unaffected. On Omarchy,
 reload Hyprland and check `hyprctl configerrors`. Verify that active paths resolve
 into this checkout, and report anything that could not be checked on the host.
+
+After changing theme behavior, run `nvim --headless -i NONE -c 'luafile tests/theme.lua'`
+with this config active. It uses temporary fixtures and leaves saved user
+preferences untouched. Real Omarchy session checks still belong on Linux.
 
 Do not reintroduce collection scripts, automatic setup scripts, duplicate
 snapshots, or starter examples. Keep the Neovim license and plugin lockfile.

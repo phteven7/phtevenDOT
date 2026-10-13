@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="660" viewBox="0 0 1280 660" role="img" aria-labelledby="title desc">
+  <title id="title">Your first five minutes with phtevenDOT</title>
+  <desc id="desc">Neovim: i to insert, Escape for normal mode, colon w to save, colon q to quit. tmux: press Control Space, release, then a command key. Zsh: right arrow at the end of a line accepts a suggestion. Neovim theme: PhtevenTheme opens the fixed or Omarchy picker.</desc>
+  <rect width="1280" height="660" rx="24" fill="#11111b"/>
+  <rect x="1" y="1" width="1278" height="658" rx="23" fill="none" stroke="#313244"/>
+  <g font-family="monospace">
+    <text x="60" y="58" fill="#a6e3a1" font-size="12" letter-spacing="3">FIELD GUIDE / 02</text>
+    <text x="56" y="124" fill="#cdd6f4" font-size="46" font-weight="700" letter-spacing="-2">Your first five minutes<tspan fill="#cba6f7">.</tspan></text>
+    <text x="60" y="161" fill="#a6adc8" font-size="17">A few small moves. A much better flow.</text>
+    <g transform="translate(60 199)">
+      <rect width="565" height="190" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="26" y="37" fill="#89b4fa" font-size="13">NEOVIM / GET IN. GET OUT.</text>
+      <text x="26" y="79" fill="#cdd6f4" font-size="19">i <tspan fill="#a6adc8" font-size="15">insert</tspan>    Esc <tspan fill="#a6adc8" font-size="15">normal</tspan>    :w <tspan fill="#a6adc8" font-size="15">save</tspan></text>
+      <text x="26" y="117" fill="#cdd6f4" font-size="19">:q <tspan fill="#a6adc8" font-size="15">quit</tspan>     Space <tspan fill="#a6adc8" font-size="15">pause to see shortcuts</tspan></text>
+      <text x="26" y="160" fill="#6c7086" font-size="14">Commands use Enter. Normal-mode keys do not.</text>
+    </g>
+    <g transform="translate(655 199)">
+      <rect width="565" height="190" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="26" y="37" fill="#cba6f7" font-size="13">TMUX / PREFIX, THEN KEY.</text>
+      <text x="26" y="79" fill="#cdd6f4" font-size="19">Ctrl + Space <tspan fill="#a6adc8" font-size="15">→ release → command</tspan></text>
+      <text x="26" y="117" fill="#cdd6f4" font-size="19">| <tspan fill="#a6adc8" font-size="15">side by side</tspan>     - <tspan fill="#a6adc8" font-size="15">top and bottom</tspan></text>
+      <text x="26" y="160" fill="#6c7086" font-size="14">Then use prefix + h / j / k / l to move.</text>
+    </g>
+    <g transform="translate(60 419)">
+      <rect width="565" height="190" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="26" y="37" fill="#a6e3a1" font-size="13">ZSH / LESS TYPING.</text>
+      <text x="26" y="79" fill="#cdd6f4" font-size="19">→ <tspan fill="#a6adc8" font-size="15">accept the gray suggestion at line end</tspan></text>
+      <text x="26" y="117" fill="#cdd6f4" font-size="19">Ctrl + R <tspan fill="#a6adc8" font-size="15">search command history</tspan></text>
+      <text x="26" y="160" fill="#6c7086" font-size="14">Read a recalled command before you run it.</text>
+    </g>
+    <g transform="translate(655 419)">
+      <rect width="565" height="190" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="26" y="37" fill="#f9e2af" font-size="13">THEME / MAKE THE CALL.</text>
+      <text x="26" y="79" fill="#cdd6f4" font-size="19">:PhtevenTheme <tspan fill="#a6adc8" font-size="15">→ choose your mode</tspan></text>
+      <text x="26" y="117" fill="#a6adc8" font-size="15">Fixed favorite or follow Omarchy's palette.</text>
+      <text x="26" y="160" fill="#6c7086" font-size="14">Space → u → Shift + O toggles between them.</text>
+    </g>
+    <text x="60" y="641" fill="#6c7086" font-size="12">phtevenDOT / Learn a few bindings today. Add your own tomorrow.</text>
+  </g>
+</svg>

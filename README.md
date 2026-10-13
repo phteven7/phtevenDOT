@@ -2,26 +2,39 @@
 
 <div align="center">
 
-**A personal terminal setup, ready to make your own.**
+**Sick configs by phteven. Make the workspace yours.**
 
-[Bring it home](#bring-it-home) · [The configs](#the-configs) · [Key moves](#key-moves) · [Agent guide](AGENTS.md)
+[The killer move](#the-killer-move-swap) · [Bring it home](#bring-it-home) · [Theme modes](#your-theme-your-call) · [Starter guide](docs/field-guide.md) · [Agent guide](AGENTS.md)
 
 </div>
 
+## The killer move: Swap
+
+Focus the window you need. Hold **Alt + Shift + Return**. It trades places with
+the master and gets the main area **and keyboard focus**. Your previous main
+window stays open beside it.
+
+![Swap tutorial: the key chord, focused docs beside Neovim, then docs promoted to the master while Neovim moves aside.](assets/swap-workflow.svg)
+
+**Why it's sick:** your work changes priority constantly. Code, read the docs,
+inspect a log, get back to code. Swap gives the next task room while keeping the
+rest of your workspace in sight. One chord replaces the window-dragging ritual.
+
+[Try the 60-second walkthrough →](docs/field-guide.md#swap-the-60-second-walkthrough)
+
 ## The configs
 
-Catppuccin Mocha, Vim motions, a two-line shell prompt, and an Amethyst-style
-centered master layout. Small, readable configs with their dependencies kept
-outside the checkout.
+Mocha by default. Vim directions throughout. Real tabs. **phteven bindings**
+for the window manager: inspired by Amethyst, shaped here, ready to grow.
 
 | | What you get | Source → active path |
 | --- | --- | --- |
-| **Neovim** | LazyVim, transparent Mocha, C# tooling, real tabs | [`nvim/`](nvim/) → `~/.config/nvim` |
+| **Neovim** | LazyVim, C# tooling, fixed theme or Omarchy palette sync | [`nvim/`](nvim/) → `~/.config/nvim` |
 | **tmux** | Rounded Mocha tabs, top status bar, Vim pane navigation | [`tmux/tmux.conf`](tmux/tmux.conf) → `~/.tmux.conf` |
 | **Zsh** | Oh My Zsh, autosuggestions, syntax highlighting | [`zsh/zshrc`](zsh/zshrc) → `~/.zshrc` |
 | **Prompt** | Powerlevel10k, Git status, contextual right prompt | [`zsh/p10k.zsh`](zsh/p10k.zsh) → `~/.p10k.zsh` |
 | **macOS** | Homebrew and optional Toolbox paths | [`zsh/zprofile`](zsh/zprofile) → `~/.zprofile` |
-| **Hyprland** | Amethyst bindings and centered master at 55% | [`config/hypr/`](config/hypr/) → matching files in `~/.config/hypr/` |
+| **phteven bindings** | Focus, Swap, resize, reset; centered master at 55% | [`config/hypr/`](config/hypr/) → matching files in `~/.config/hypr/` |
 
 ## Bring it home
 
@@ -45,68 +58,54 @@ ripgrep, fd, a C compiler, and gitui; C# tooling needs a .NET SDK. Upstream URLs
 expected paths, and known-working revisions live in [`dependencies.json`](dependencies.json).
 Neovim installs its plugins from [`lazy-lock.json`](nvim/lazy-lock.json).
 
-**Omarchy:** The Hyprland overrides require a Lua-based installation with the
-`hl` and `o` APIs. They load after Omarchy's defaults. Monitor, input, autostart,
-and VM settings belong to the host installation.
+**Omarchy:** Window-manager bindings require a Lua-based Hyprland/Omarchy
+installation with the `hl` and `o` APIs. They load after Omarchy's defaults.
+Monitor, input, autostart, and VM settings stay with the host installation.
 
-## Key moves
+## Your theme. Your call.
 
-<details>
-<summary><strong>Neovim · editing and buffers</strong></summary>
+Open **`:PhtevenTheme`** in Neovim to choose a mode. **Space → u → Shift + O**
+toggles between them. The choice is saved on your machine, outside the repo.
 
-`Leader` is Space. These are personal additions to LazyVim's default keymaps.
-
-| Keys | Action |
+| Mode | Behavior |
 | --- | --- |
-| Visual `<` / `>` | Indent and keep the selection |
-| Visual `J` / `K` | Move selected lines down / up |
-| `Leader b n` / `Leader b p` | Next / previous buffer |
-| `Esc` | Clear search highlighting |
+| **Fixed** | Keep your favorite installed colorscheme. Starts with transparent Catppuccin Mocha. |
+| **Omarchy** | Feed the active system palette into Catppuccin's highlighting. Match the background, text, accents, and syntax colors; update while Neovim is open. |
 
-Real tab characters are the editor default: two columns normally, four for C#.
-Project EditorConfig and formatter settings take precedence. For CSharpier,
-set [`"useTabs": true`](https://csharpier.com/docs/Configuration) in a project's
-`.csharpierrc.json` when you want formatted C# to keep tabs too. The repo's
-EditorConfig and StyLua settings use tabs for Lua.
+```vim
+:PhtevenTheme fixed
+:PhtevenTheme fixed tokyonight-night
+:PhtevenTheme omarchy
+:PhtevenTheme status
+```
 
-</details>
+Auto mode reads Omarchy's `colors.toml` from its current theme directory in the
+XDG state or config location. It checks every two seconds and on focus changes.
+Both dark and light palettes work. If no usable palette exists at startup, it
+uses the fixed theme; interrupted theme changes keep the last good palette.
+It follows the colors through Catppuccin, rather than loading Omarchy's separate
+Neovim plugin spec. [Omarchy's palette format](https://github.com/omacom/omarchy/blob/quattro/docs/theming.md#colorstoml).
 
-<details>
-<summary><strong>tmux · panes and sessions</strong></summary>
+## Learn the flow
 
-`Prefix` is Ctrl + Space. Press it before these keys.
+Start with [the visual field guide](docs/field-guide.md): Swap, directional
+focus, the difference between held chords and tmux's prefix, Neovim basics,
+and a few exercises to build muscle memory.
 
-| Keys | Action |
-| --- | --- |
-| `h` / `j` / `k` / `l` | Focus a pane |
-| `H` / `J` / `K` / `L` | Resize a pane |
-| `\|` / `-` | Split side by side / top and bottom |
-| `,` / `$` | Rename window / session |
-| `r` | Reload the config |
+- **Window manager:** Alt + Shift + H/J/K/L focuses; Return swaps with master.
+- **tmux:** Ctrl + Space, release, then h/j/k/l focuses a pane.
+- **Neovim:** h/j/k/l moves the cursor in Normal mode; Space opens the leader menu.
 
-Mouse support and Vim copy mode are enabled. Window names stay as you set them.
-
-</details>
-
-<details>
-<summary><strong>Amethyst · centered master</strong></summary>
-
-On Apple keyboards, Option is Alt and Command is Super. New windows become
-slaves; the master centers with at least two slaves and otherwise sits left.
-
-| Keys | Action |
-| --- | --- |
-| Alt + Shift + H/J/K/L | Focus left / down / up / right |
-| Alt + Shift + Return | Swap with master |
-| Alt + Ctrl + Shift + H/L | Shrink / grow master by 5 percentage points |
-| Alt + Ctrl + Shift + Return | Reset master width to 55% |
-
-Check for conflicts with existing bindings before integrating. Reload with
-`hyprctl reload` and verify with `hyprctl configerrors`.
-
-</details>
+Real tabs are the editor default: two columns normally, four for C#. Project
+EditorConfig and formatter rules take precedence. CSharpier projects should set
+[`"useTabs": true`](https://csharpier.com/docs/Configuration) when formatted C#
+should keep tabs too.
 
 ---
+
+Made by **phteven**. phteven bindings started with inspiration from
+[Amethyst](https://github.com/ianyh/Amethyst) and Vim's directional keys;
+the collection evolves here. The current window bindings target Omarchy/Hyprland.
 
 Built on [LazyVim](https://github.com/LazyVim/LazyVim),
 [Catppuccin](https://github.com/catppuccin),

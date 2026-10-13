@@ -1,4 +1,4 @@
--- Project Amethyst: native dynamic centered master; keep Omarchy styling.
+-- phteven bindings: native dynamic centered master; keep Omarchy styling.
 hl.config({
 	general = { layout = "master" },
 	master = {

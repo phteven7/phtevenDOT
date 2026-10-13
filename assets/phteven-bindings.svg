@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-labelledby="title desc">
+  <title id="title">phteven bindings — focus, promote, resize, reset</title>
+  <desc id="desc">Window bindings inspired by Amethyst. Alt Shift H J K L focuses left down up right. Alt Shift Return swaps with master. Alt Ctrl Shift H or L resizes the master. Alt Ctrl Shift Return resets the master width to 55 percent.</desc>
+  <rect width="1280" height="900" rx="24" fill="#11111b"/>
+  <rect x="1" y="1" width="1278" height="898" rx="23" fill="none" stroke="#313244"/>
+  <g font-family="monospace">
+    <text x="60" y="58" fill="#a6e3a1" font-size="12" letter-spacing="3">FIELD GUIDE / 01</text>
+    <text x="1220" y="58" text-anchor="end" fill="#a6adc8" font-size="12">INSPIRED BY AMETHYST. BUILT BY PHTEVEN.</text>
+    <text x="56" y="127" fill="#cdd6f4" font-size="48" font-weight="700" letter-spacing="-2">phteven bindings<tspan fill="#cba6f7">.</tspan></text>
+    <text x="60" y="163" fill="#a6adc8" font-size="17">Focus. Promote. Resize. Repeat.</text>
+    <rect x="60" y="198" width="1160" height="280" rx="14" fill="#181825" stroke="#313244"/>
+    <text x="88" y="232" fill="#6c7086" font-size="12" letter-spacing="2">THE CENTERED MASTER</text>
+    <rect x="130" y="257" width="210" height="150" rx="9" fill="#1e1e2e" stroke="#45475a"/>
+    <rect x="360" y="257" width="560" height="150" rx="9" fill="#282436" stroke="#cba6f7" stroke-width="2"/>
+    <rect x="940" y="257" width="210" height="150" rx="9" fill="#1e1e2e" stroke="#45475a"/>
+    <text x="235" y="328" text-anchor="middle" fill="#a6adc8" font-size="17">supporting</text>
+    <text x="235" y="353" text-anchor="middle" fill="#6c7086" font-size="13">window</text>
+    <text x="640" y="321" text-anchor="middle" fill="#cba6f7" font-size="27" font-weight="700">YOUR MAIN THING</text>
+    <text x="640" y="353" text-anchor="middle" fill="#cdd6f4" font-size="16">master · 55% width</text>
+    <text x="1045" y="328" text-anchor="middle" fill="#a6adc8" font-size="17">supporting</text>
+    <text x="1045" y="353" text-anchor="middle" fill="#6c7086" font-size="13">window</text>
+    <text x="640" y="448" text-anchor="middle" fill="#a6adc8" font-size="14">2+ slaves: master centers. Fewer: it sits left. New windows become slaves.</text>
+    <g transform="translate(60 510)">
+      <rect width="370" height="210" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="24" y="37" fill="#89b4fa" font-size="13">01 / FOCUS</text>
+      <text x="24" y="73" fill="#cdd6f4" font-size="17">Hold Alt + Shift</text>
+      <g fill="#313244" stroke="#45475a">
+        <rect x="24" y="93" width="62" height="46" rx="7"/>
+        <rect x="106" y="93" width="62" height="46" rx="7"/>
+        <rect x="188" y="93" width="62" height="46" rx="7"/>
+        <rect x="270" y="93" width="62" height="46" rx="7"/>
+      </g>
+      <g fill="#cdd6f4" font-size="21" text-anchor="middle">
+        <text x="55" y="123">H</text><text x="137" y="123">J</text><text x="219" y="123">K</text><text x="301" y="123">L</text>
+      </g>
+      <g fill="#a6adc8" font-size="12" text-anchor="middle">
+        <text x="55" y="162">left</text><text x="137" y="162">down</text><text x="219" y="162">up</text><text x="301" y="162">right</text>
+      </g>
+      <text x="24" y="190" fill="#6c7086" font-size="12">Same directions. Across your workflow.</text>
+    </g>
+    <g transform="translate(455 510)">
+      <rect width="370" height="210" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="24" y="37" fill="#cba6f7" font-size="13">02 / PROMOTE</text>
+      <text x="24" y="73" fill="#cdd6f4" font-size="17">Hold Alt + Shift</text>
+      <rect x="24" y="93" width="170" height="46" rx="7" fill="#313244" stroke="#45475a"/>
+      <text x="109" y="123" text-anchor="middle" fill="#cdd6f4" font-size="20">Return ↵</text>
+      <text x="24" y="164" fill="#a6adc8" font-size="14">Swap the focused window</text>
+      <text x="24" y="185" fill="#a6adc8" font-size="14">into the master position.</text>
+    </g>
+    <g transform="translate(850 510)">
+      <rect width="370" height="210" rx="14" fill="#1e1e2e" stroke="#313244"/>
+      <text x="24" y="37" fill="#a6e3a1" font-size="13">03 / RESIZE</text>
+      <text x="24" y="73" fill="#cdd6f4" font-size="17">Hold Alt + Ctrl + Shift</text>
+      <rect x="24" y="93" width="62" height="46" rx="7" fill="#313244" stroke="#45475a"/>
+      <rect x="106" y="93" width="62" height="46" rx="7" fill="#313244" stroke="#45475a"/>
+      <text x="55" y="123" text-anchor="middle" fill="#cdd6f4" font-size="21">H</text>
+      <text x="137" y="123" text-anchor="middle" fill="#cdd6f4" font-size="21">L</text>
+      <text x="24" y="164" fill="#a6adc8" font-size="14">H shrinks. L grows.</text>
+      <text x="24" y="185" fill="#a6adc8" font-size="14">5 percentage points at a time.</text>
+    </g>
+    <rect x="60" y="755" width="1160" height="88" rx="14" fill="#181825" stroke="#313244"/>
+    <text x="88" y="793" fill="#f9e2af" font-size="13">NEED A RESET?</text>
+    <text x="88" y="820" fill="#cdd6f4" font-size="17">Alt + Ctrl + Shift + Return</text>
+    <text x="1188" y="807" text-anchor="end" fill="#a6adc8" font-size="15">Back to 55%. Keep going.</text>
+    <text x="60" y="874" fill="#6c7086" font-size="12">On Apple keyboards: Option = Alt · Command = Super. These chords are held together.</text>
+  </g>
+</svg>

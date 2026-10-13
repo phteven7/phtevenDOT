@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1120" viewBox="0 0 1280 1120" role="img" aria-labelledby="title desc">
+  <title id="title">SWAP — the phteven killer move</title>
+  <desc id="desc">Hold Alt, Shift, and Return together. Before: Neovim is the central master, documentation is focused on the right, and a terminal sits left. After: documentation becomes the focused central master, Neovim moves to its old supporting position, and the terminal stays left. Focus the next window and swap it into the main area.</desc>
+  <rect width="1280" height="1120" rx="24" fill="#11111b"/>
+  <rect x="1" y="1" width="1278" height="1118" rx="23" fill="none" stroke="#313244"/>
+  <g font-family="monospace">
+    <text x="60" y="58" fill="#a6e3a1" font-size="12" letter-spacing="3">PHTEVEN BINDINGS / THE KILLER MOVE</text>
+    <text x="56" y="128" fill="#cdd6f4" font-size="54" font-weight="700" letter-spacing="-2">SWAP is the move<tspan fill="#cba6f7">.</tspan></text>
+    <text x="60" y="168" fill="#a6adc8" font-size="17">Promote the window you need. Keep everything else in reach.</text>
+    <rect x="60" y="208" width="1160" height="132" rx="14" fill="#1e1e2e" stroke="#313244"/>
+    <g fill="#313244" stroke="#cba6f7">
+      <rect x="88" y="239" width="110" height="70" rx="10"/>
+      <rect x="239" y="239" width="150" height="70" rx="10"/>
+      <rect x="430" y="239" width="208" height="70" rx="10"/>
+    </g>
+    <g fill="#cdd6f4" font-size="26" text-anchor="middle">
+      <text x="143" y="284">Alt</text><text x="314" y="284">Shift</text><text x="534" y="284">Return ↵</text>
+    </g>
+    <text x="213" y="284" fill="#6c7086" font-size="22">+</text>
+    <text x="404" y="284" fill="#6c7086" font-size="22">+</text>
+    <text x="1188" y="265" text-anchor="end" fill="#cba6f7" font-size="17">HOLD ALL THREE TOGETHER.</text>
+    <text x="1188" y="294" text-anchor="end" fill="#a6adc8" font-size="14">Apple keyboard? Alt is Option ⌥.</text>
+    <rect x="60" y="377" width="1160" height="288" rx="14" fill="#181825" stroke="#313244"/>
+    <text x="88" y="413" fill="#89b4fa" font-size="13">01 / FOCUS WHAT YOU NEED NEXT</text>
+    <text x="1192" y="413" text-anchor="end" fill="#a6e3a1" font-size="12">GREEN BORDER = FOCUSED</text>
+    <g transform="translate(88 438)">
+      <rect width="180" height="180" rx="8" fill="#1e1e2e" stroke="#45475a"/>
+      <text x="18" y="29" fill="#6c7086" font-size="12">TERMINAL</text>
+      <path d="M18 42H162" stroke="#313244"/>
+      <text x="18" y="72" fill="#a6adc8" font-size="13">❯ dotnet test</text>
+      <text x="18" y="99" fill="#a6e3a1" font-size="12">tests passed</text>
+      <text x="18" y="156" fill="#6c7086" font-size="11">stays put</text>
+    </g>
+    <g transform="translate(280 438)">
+      <rect width="600" height="180" rx="8" fill="#1e1e2e" stroke="#cba6f7"/>
+      <text x="20" y="29" fill="#cba6f7" font-size="12">NEOVIM / MASTER · 55%</text>
+      <path d="M20 42H580" stroke="#313244"/>
+      <text x="20" y="74" fill="#cba6f7" font-size="14">public <tspan fill="#89b4fa">Task</tspan> <tspan fill="#cdd6f4">SaveAsync()</tspan></text>
+      <text x="20" y="103" fill="#cdd6f4" font-size="14">{</text>
+      <text x="42" y="132" fill="#a6adc8" font-size="14">// need to check the API docs...</text>
+      <text x="20" y="160" fill="#cdd6f4" font-size="14">}</text>
+    </g>
+    <g transform="translate(892 438)">
+      <rect width="300" height="180" rx="8" fill="#202c2a" stroke="#a6e3a1" stroke-width="2"/>
+      <text x="18" y="29" fill="#a6e3a1" font-size="12">DOCS / FOCUSED</text>
+      <path d="M18 42H282" stroke="#3a4d45"/>
+      <text x="18" y="78" fill="#cdd6f4" font-size="19">The answer is here.</text>
+      <text x="18" y="108" fill="#a6adc8" font-size="13">Give this window</text>
+      <text x="18" y="130" fill="#a6adc8" font-size="13">the room to read.</text>
+    </g>
+    <text x="640" y="647" text-anchor="middle" fill="#6c7086" font-size="12">From the master, Alt + Shift + L focuses the docs on the right.</text>
+    <path d="M640 681V714" stroke="#cba6f7" stroke-width="3"/>
+    <path d="M631 706L640 715L649 706" fill="none" stroke="#cba6f7" stroke-width="3"/>
+    <text x="672" y="704" fill="#cba6f7" font-size="15">Alt + Shift + Return</text>
+    <rect x="60" y="733" width="1160" height="288" rx="14" fill="#181825" stroke="#313244"/>
+    <text x="88" y="769" fill="#a6e3a1" font-size="13">02 / SAME WORKSPACE. A NEW PRIORITY.</text>
+    <g transform="translate(88 794)">
+      <rect width="180" height="180" rx="8" fill="#1e1e2e" stroke="#45475a"/>
+      <text x="18" y="29" fill="#6c7086" font-size="12">TERMINAL</text>
+      <path d="M18 42H162" stroke="#313244"/>
+      <text x="18" y="72" fill="#a6adc8" font-size="13">❯ dotnet test</text>
+      <text x="18" y="99" fill="#a6e3a1" font-size="12">tests passed</text>
+      <text x="18" y="156" fill="#6c7086" font-size="11">still right here</text>
+    </g>
+    <g transform="translate(280 794)">
+      <rect width="600" height="180" rx="8" fill="#202c2a" stroke="#a6e3a1" stroke-width="2"/>
+      <text x="20" y="29" fill="#a6e3a1" font-size="12">DOCS / NEW MASTER · FOCUSED · 55%</text>
+      <path d="M20 42H580" stroke="#3a4d45"/>
+      <text x="20" y="81" fill="#cdd6f4" font-size="25">Room to read. Ready to work.</text>
+      <text x="20" y="117" fill="#a6adc8" font-size="15">The docs get the main area and keyboard focus.</text>
+      <text x="20" y="149" fill="#a6adc8" font-size="15">Your code and tests are still visible.</text>
+    </g>
+    <g transform="translate(892 794)">
+      <rect width="300" height="180" rx="8" fill="#1e1e2e" stroke="#45475a"/>
+      <text x="18" y="29" fill="#cba6f7" font-size="12">NEOVIM / SUPPORTING</text>
+      <path d="M18 42H282" stroke="#313244"/>
+      <text x="18" y="78" fill="#cdd6f4" font-size="18">Your code stays open.</text>
+      <text x="18" y="108" fill="#a6adc8" font-size="13">Focus it + swap</text>
+      <text x="18" y="130" fill="#a6adc8" font-size="13">when you're ready.</text>
+    </g>
+    <text x="640" y="1003" text-anchor="middle" fill="#6c7086" font-size="12">Promote the next thing you need. The layout takes care of the rest.</text>
+    <text x="60" y="1062" fill="#cdd6f4" font-size="18">One chord. New main thing. Zero dragging.</text>
+    <text x="60" y="1092" fill="#6c7086" font-size="12">Illustrated layout, not a screenshot. Tiled windows in phteven's centered-master layout.</text>
+  </g>
+</svg>

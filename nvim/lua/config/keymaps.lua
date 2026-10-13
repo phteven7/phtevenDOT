@@ -13,3 +13,8 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 map("n", "<Esc>", "<cmd>nohlsearch<cr>", { desc = "Clear search highlight" })
+
+-- phteven: toggle a fixed editor theme / the active Omarchy palette.
+map("n", "<leader>uO", function()
+	require("config.theme").toggle()
+end, { desc = "Toggle Omarchy theme sync" })

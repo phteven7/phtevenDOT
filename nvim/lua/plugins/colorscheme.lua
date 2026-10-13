@@ -2,7 +2,9 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin-mocha",
+			colorscheme = function()
+				require("config.theme").apply()
+			end,
 		},
 	},
 }

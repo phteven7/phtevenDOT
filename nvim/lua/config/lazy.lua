@@ -40,3 +40,5 @@ require("lazy").setup({
 		},
 	},
 })
+
+require("config.theme").setup()
