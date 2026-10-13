@@ -1,0 +1,27 @@
+[
+  {
+    "path": "~/.oh-my-zsh",
+    "upstream": "https://github.com/ohmyzsh/ohmyzsh.git",
+    "installed_commit": "40bddc3c1a100feafccb01403f74c1d4e7380380"
+  },
+  {
+    "path": "~/.oh-my-zsh/custom/themes/powerlevel10k",
+    "upstream": "https://github.com/romkatv/powerlevel10k.git",
+    "installed_commit": "36f3045d69d1ba402db09d09eb12b42eebe0fa3b"
+  },
+  {
+    "path": "~/.oh-my-zsh/custom/plugins/zsh-autosuggestions",
+    "upstream": "https://github.com/zsh-users/zsh-autosuggestions.git",
+    "installed_commit": "85919cd1ffa7d2d5412f6d3fe437ebdbeeec4fc5"
+  },
+  {
+    "path": "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
+    "upstream": "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+    "installed_commit": "5eb677bb0fa9a3e60f0eff031dc13926e093df92"
+  },
+  {
+    "path": "~/.config/tmux/plugins/catppuccin/tmux",
+    "upstream": "https://github.com/catppuccin/tmux.git",
+    "installed_commit": "b2f219c00609ea1772bcfbdae0697807184743e4"
+  }
+]
